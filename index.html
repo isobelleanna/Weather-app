@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body" id="main-body">
+                <div class="row no-gutters">
+                    <div class="col-sm-12">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="search-input" placeholder="City"
+                                aria-label="City" aria-describedby="button-addon2" />
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                                    🔍
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row no-gutters">
+                        <div class="col-9">
+                            <h1 id="current-city"><strong>London</strong></h1>
+                        </div>
+
+                        <div class="col-3">
+                            <h1 class="today-weather">🌦</h1>
+                        </div>
+
+                        <div class="col-6">
+                            <h3 id="today-tempurature">Today | <strong>16</strong>℃</h3>
+                        </div>
+                        <div class="col-2">
+                            <h5>Humidity</h5>
+                            <p>20%</p>
+                        </div>
+                        <div class="col-2">
+                            <h5>Precipitation</h5>
+                            <p>3%</p>
+                        </div>
+                        <div class="col-2">
+                            <h5>Wind Speed</h5>
+                            <p>4mph</p>
+                        </div>
+                        <div class="col-1">
+                            <button type="button" class="btn btn-light" id="cheight">C</button>
+                        </div>
+                        <div class="col-1">
+                            <button type="button" class="btn btn-dark" id="fheight">F</button>
+                        </div>
+                        <div class="col-1">
+                            <button type="button" class="btn btn-dark" id="current-location-button">📍</button>
+                        </div>
+                        <div class="col-9">
+                            <p id="date-time">Monday 00:00</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="card-group">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h2 class="card-title">☀️</h2>
+                        <p class="card-text"><strong>12</strong>℃</p>
+                        <p class="card-text">Monday</p>
+                    </div>
+                </div>
+                <div class="card">
+
+                    <div class="card-body">
+                        <h2 class="card-title">🌤</h2>
+                        <p class="card-text"><strong>15</strong>℃</p>
+                        <p class="card-text">Tuesday</p>
+                    </div>
+                </div>
+                <div class="card">
+
+                    <div class="card-body">
+                        <h2 class="card-title">🌧</h2>
+                        <p class="card-text"><strong>19</strong>℃</p>
+                        <p class="card-text">Wednesday</p>
+                    </div>
+                </div>
+                <div class="card">
+
+                    <div class="card-body">
+                        <h2 class="card-title">🌩</h2>
+                        <p class="card-text"><strong>14</strong>℃</p>
+                        <p class="card-text">Thursday</p>
+                    </div>
+                </div>
+                <div class="card">
+
+                    <div class="card-body">
+                        <h2 class="card-title">🌤</h2>
+                        <p class="card-text"><strong>11</strong>℃</p>
+                        <p class="card-text">Friday</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+    </div>
+    <script src="src/index.js"></script>
+</body>
+
+</html>
