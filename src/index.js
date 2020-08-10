@@ -25,9 +25,14 @@ let now = new Date();
 dateTime.innerHTML = formatDate(now);
 
 function displayWeatherCondition(response) {
+  let iconElement = document.querySelector("#icon");
   document.querySelector("#current-city").innerHTML = response.data.name;
   document.querySelector("#today-tempurature").innerHTML = Math.round(
     response.data.main.temp
+  );
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
 
