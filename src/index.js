@@ -20,7 +20,7 @@ function formatDate(now) {
   return `${day} ${hours}:${minutes}`;
 }
 
-let dateTime = document.querySelector("p#date-time");
+let dateTime = document.querySelector("#date-time");
 let now = new Date();
 dateTime.innerHTML = formatDate(now);
 
