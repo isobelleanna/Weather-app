@@ -26,10 +26,11 @@ dateTime.innerHTML = formatDate(now);
 
 function displayWeatherCondition(response) {
   let iconElement = document.querySelector("#icon");
+  let tempuratureElement = document.querySelector("#today-tempurature");
+
   document.querySelector("#current-city").innerHTML = response.data.name;
-  document.querySelector("#today-tempurature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  nowCelciusTemperature = response.data.main.temp;
+  tempuratureElement.innerHTML = Math.round(nowCelciusTemperature);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -52,21 +53,30 @@ function changeCity(event) {
 let element = document.querySelector("#button-addon2");
 element.addEventListener("click", changeCity);
 
-function fahrenheitTemperature() {
-  let h3 = document.querySelector("h3#today-tempurature");
-  h3.innerHTML = `Today | <strong>66</strong> ℉`;
+function fahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (nowCelciusTemperature * 9) / 5 + 32;
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let tempuratureElement = document.querySelector("#today-tempurature");
+  tempuratureElement.innerHTML = Math.round(fahrenheitTemp);
 }
 
-let clickMeButton = document.querySelector("#fheight");
-clickMeButton.addEventListener("click", fahrenheitTemperature);
+let fahrenheitLink = document.querySelector("#fheight");
+fahrenheitLink.addEventListener("click", fahrenheitTemperature);
 
-function celciusTemperature() {
-  let h3 = document.querySelector("h3#today-tempurature");
-  h3.innerHTML = `Today | <strong>16</strong> ℃`;
+function celciusTemperature(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
+  let tempuratureElement = document.querySelector("#today-tempurature");
+  tempuratureElement.innerHTML = Math.round(nowCelciusTemperature);
 }
 
-let clickButton = document.querySelector("#cheight");
-clickButton.addEventListener("click", celciusTemperature);
+let celciusLink = document.querySelector("#cheight");
+celciusLink.addEventListener("click", celciusTemperature);
+
+let nowCelciusTemperature = null;
 
 //let currentLocationButton = document.querySelector("#current-location-button");
 //currentLocationButton.addEventListener("click", getCurrentLocation);

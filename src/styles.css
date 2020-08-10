@@ -68,3 +68,12 @@ p {
   line-height: 35px;
   padding-top: 5px;
 }
+.active {
+  color: #b32244;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: #b32244;
+}
