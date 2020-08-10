@@ -52,7 +52,7 @@ clickMeButton.addEventListener("click", fahrenheitTemperature);
 
 function celciusTemperature() {
   let h3 = document.querySelector("h3#today-tempurature");
-  h3.innerHTML = `Today | <strong>16</strong> ℉`;
+  h3.innerHTML = `Today | <strong>16</strong> ℃`;
 }
 
 let clickButton = document.querySelector("#cheight");
