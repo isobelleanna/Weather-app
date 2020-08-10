@@ -77,3 +77,9 @@ p {
   text-decoration: none;
   color: #b32244;
 }
+
+#description {
+  text-align: left;
+  text-transform: capitalize;
+  padding-left: 20px;
+}

@@ -27,7 +27,8 @@ dateTime.innerHTML = formatDate(now);
 function displayWeatherCondition(response) {
   let iconElement = document.querySelector("#icon");
   let tempuratureElement = document.querySelector("#today-tempurature");
-
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
   document.querySelector("#current-city").innerHTML = response.data.name;
   nowCelciusTemperature = response.data.main.temp;
   tempuratureElement.innerHTML = Math.round(nowCelciusTemperature);
