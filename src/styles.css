@@ -60,5 +60,5 @@ p {
   padding: 30px 40px;
   border: 5px solid #f7f5dd;
   border-radius: 100%;
-  font: size 900px;
+  max-width: 100%;
 }
